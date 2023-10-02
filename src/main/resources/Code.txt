@@ -1,0 +1,2 @@
+   // Get the selected text content
+        String classDefinition = event.getData(CommonDataKeys.EDITOR).getSelectionModel().getSelectedText();

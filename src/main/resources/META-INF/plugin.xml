@@ -1,0 +1,87 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.tamajit.intellij-custom-plugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>IntelliJ-custom-plugin</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+<!--    <depends>com.intellij.modules.platform</depends>-->
+    <depends>com.intellij.modules.java</depends>
+
+<!--    https://plugins.jetbrains.com/docs/intellij/plugin-dependencies.html#preparing-sandbox-->
+    <depends>org.jetbrains.idea.maven</depends>
+<!--    <depends>com.intellij.modules.xml</depends>-->
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <actions>
+        <!--<group id="EditorPopupMenu">
+            <action id="AddMethodAction" class="com.tamajit.AddMethodAction" text="Add Method" description="Adds a greet method"/>
+        </group>
+-->
+
+        <action id="MyAction" class="com.tamajit.AddMethodAction2" text="MyAction">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="AddMethod" class="com.tamajit.AddMethodAction" text="Add method">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="createXML" class="com.tamajit.CreateXmlFileAction" text="createXML">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="createXML2" class="com.tamajit.CreateXmlFileAction2" text="createXML2">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="createJSON" class="com.tamajit.CreateJsonFileAction" text="createJSON">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+        <action id="updateXml" class="com.tamajit.UpdateXmlByXPathAction" text="updateXml">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="createClass" class="com.tamajit.CreateClassAction" text="createClass">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="createModule" class="com.tamajit.MavenModuleCreator" text="createModule">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+
+        <action id="MvnCompile" class="com.tamajit.MavenCompilerExecutor" text="MvnCompile">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="PomXmlUpdater" class="com.tamajit.PomXmlUpdater" text="PomXmlUpdater">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="addAnnotation" class="com.tamajit.AnnotationAdder" text="addAnnotation">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action id="generateBuilder" class="com.tamajit.BuilderGenerator" text="generateBuilder">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+    </actions>
+
+</idea-plugin>
